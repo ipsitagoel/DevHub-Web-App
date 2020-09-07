@@ -10,7 +10,7 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <title>Welcome To The Developer Connector</title>
+  <title>Welcome To The Developer Hub</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
@@ -19,15 +19,17 @@
         var email = $(this).val();
         if (!re.test(email)) {
           window.alert("Please enter a valid email");
+          $(this).val("");
         }
       });
       $("#phno").change(function () {
         var re = new RegExp(
-          "^((\\+){0,1}91(\\s){0,1}(\\-){0,1}(\\s){0,1}){0,1}98(\\s){0,1}(\\-){0,1}(\\s){0,1}[1-9]{1}[0-9]{7}$"
-        );
+          "^(\\+91[\\-\\s]?)?[0]?(91)?[789]\\d{9}$"
+        ); //[1-9]{1}[0-9]{9}
         var phn = $(this).val();
         if (!re.test(phn)) {
           window.alert("Please enter a valid indian phone number");
+          $(this).val("");
         }
       });
     });
